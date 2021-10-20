@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tmcmmpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tmcmmpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: tmcmmpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: tmcmmpipelinesjavascriptdocker 
+          image: kubenetacr.azurecr.io/tmcmmpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
